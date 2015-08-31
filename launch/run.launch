@@ -1,0 +1,18 @@
+<launch>
+    <arg name="static_map_transform" default="4.57 -11.83 0 0 0 0"/>
+
+    <!-- publish transform -->
+    <node name="static_map_transform1" type="static_transform_publisher" pkg="tf" args="$(arg static_map_transform) occ_map map 100.0"/>
+
+    <!-- run move base -->
+    <node pkg="move_base" type="move_base" name="move_base_node" output="screen">
+        <remap from="/cmd_vel" to="/spencer/control/desired_velocity"/>
+     
+        <rosparam file="$(find laserscan_to_occupancy_grid_map)/move_base_config/move_base.yaml" command="load" />
+
+        <rosparam file="$(find laserscan_to_occupancy_grid_map)/move_base_config/global_costmap_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find laserscan_to_occupancy_grid_map)/move_base_config/local_costmap_params.yaml" command="load" ns="local_costmap" />
+
+    </node>
+
+</launch>

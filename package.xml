@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>laserscan_to_occupancy_grid_map</name>
+
+  <version>0.0.1</version>
+
+  <description>Converts ROS sensor_msgs/LaserScan messages to nav_msgs/OccupancyGrid via costmap2d / move_base</description>
+
+  <maintainer email="linder@cs.uni-freiburg.de">Timm Linder</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>move_base</build_depend>
+  <run_depend>move_base</run_depend>
+
+</package>

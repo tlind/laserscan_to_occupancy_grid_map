@@ -1,0 +1,13 @@
+# local costmap is not static
+rolling_window: false
+
+# publish rate
+publish_frequency: 1.0
+
+# local costmap will operate in the map frame, transform between this and robot-base frame must be available
+global_frame: occ_map
+
+# name of the frame at base-link of the spencer robot
+robot_base_frame: base_link
+
+plugins: []
